@@ -60,7 +60,8 @@ function resolver(state = initialState, action) {
       }
     }
     case 'search/nextPage': {
-      let currentPage = state.filters.page;
+      let currentPage = parseInt(state.filters.page);
+      let nextPage = String(currentPage++);
 
       return {
         ...state,
